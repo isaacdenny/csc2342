@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 // This works, but uses an if statement and 2 loops
@@ -30,8 +31,8 @@ int decimalToBinary(int n) {
 
 void printTable(unsigned char n) {
     unsigned char i, j;
-    for (i = 0; i < n; i++) {
-        cout << decimalToBinary(i);
+    for (i = 0; i < 1 << n; i++) {
+        cout << setfill('0') << setw(n) << decimalToBinary(i);
         // for (j = i; j > 0; j = j >> 1) {
         //     cout << (j & 1);
         // }
