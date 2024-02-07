@@ -1,28 +1,27 @@
 #include <iostream>
 using namespace std;
 
-void bin(unsigned char n)
-{
-    unsigned char i;
-    i = 1 << n;
-    cout << (int)i << endl;
-    for (i = 1 << n; i > 0; i = i / 2)
-    {
-        if ((n & i) != 0)
+void printTable(unsigned char n) {
+    unsigned char i, j;
+    for (i = 1 << 0; i <= (1 << n); i++) {
+        for (j = 1 << n; j > 0; j = j / 2)
         {
-            cout << "1";
+            // cout << (int)((i - 1) & j);
+            if (((i - 1) & j) != 0)
+            {
+                cout << "1 ";
+            }
+            else
+            {
+                cout << "0 ";
+            }
         }
-        else
-        {
-            cout << "0";
-        }
+        cout << endl;
     }
 }
 
 // Driver Code
-int main(void)
+int main()
 {
-    bin(2);
-    cout << endl;
-    bin(3);
+    printTable(2);
 }
