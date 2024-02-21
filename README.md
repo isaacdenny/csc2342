@@ -1,1 +1,1 @@
-# truth-table-project
+# csc2342
